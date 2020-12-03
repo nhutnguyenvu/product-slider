@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Eleadtech_ProductSlider::css/swiper-bundle.min.css" media="all" />
+        <css src="Eleadtech_ProductSlider::css/styles.css" media="all" />
+    </head>
+    <body>
+        <referenceContainer name="main.content">
+            <block class="Eleadtech\ProductSlider\Block\Slider" name="product_slider" after="-" template="Eleadtech_ProductSlider::catalog/category/slider.phtml" />
+        </referenceContainer>
+    </body>
+</page>

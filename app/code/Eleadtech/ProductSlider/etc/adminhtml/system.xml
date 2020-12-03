@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="productslider" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Product Slider</label>
+            <tab>nbs</tab>
+            <resource>Eleadtech_ProductSlider::configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="screen_formula" translate="label comment" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Screen Formula *</label>
+                    <backend_model>Eleadtech\ProductSlider\Model\Config\Backend\ScreenFormula</backend_model>
+                    <comment><![CDATA[Formula: Screen With-Slider Height <br><br> Example: 768-1200||1240-1220 <br><br>
+Screen With > 768, Slider Height = 1200 <br> Screen With > 1240, Slider Height = 1220 <br><br> Now the module just only supports for all the screens that are larger than 767 (>=768)
+]]> </comment>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="productslider/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="show_description" translate="label comment" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Description</label>
+                    <comment><![CDATA[Show product description and attribute tab]]> </comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="productslider/general/enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="developer" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Developer</label>
+                <field id="use_template_to_loading" translate="label comment" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Template For Loading</label>
+                    <comment><![CDATA[Will use The current template to look for the product detail link if this option is "Yes". This will help for category performance <br>
+                    <br> We suggest use this for ajax layer navigation]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="productslider/general/enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

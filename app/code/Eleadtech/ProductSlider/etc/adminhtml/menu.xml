@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Eleadtech_ProductSlider::productslider" title="Product Slider" module="Eleadtech_ProductSlider" sortOrder="100" resource="Eleadtech_ProductSlider::parent" parent="Eleadtech_Bcore::backend"/>
+        <add id="Eleadtech_ProductSlider::configuration" title="Settings" module="Eleadtech_AdvancePromotion" sortOrder="22" parent="Eleadtech_ProductSlider::productslider" action="adminhtml/system_config/edit/section/productslider" resource="Eleadtech_ProductSlider::configuration"/>
+    </menu>
+</config>

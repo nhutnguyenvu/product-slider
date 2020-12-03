@@ -1,0 +1,61 @@
+<?php if($this->canShow()): ?>
+    <script>
+        window.screenFormula = <?= /* @escapeNotVerified */ $block->getSlideFormularList() ?>;
+    </script>
+    <?php if(!$this->useTemplateToLoading()): ?>
+        <?php $productUrls = $block->getProductDetailUrls(); ?>
+        <?php if(!empty($productUrls)):?>
+                    <div class="product-slider">
+                        <div class="product-slider-container">
+                            <div class="close_button"><span><?php echo __("Close X") ?></span></div>
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <?php foreach ($productUrls as $url): ?>
+                                        <div class="swiper-slide">
+                                            <span class="hidden">
+                                                <?php echo  $url ?>
+                                            </span>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+
+                       </div>
+                   </div>
+        <?php endif ?>
+    <?php else: ?>
+        <div class="product-slider">
+            <div class="product-slider-container">
+                <div class="close_button"><span><?php echo __("Close X") ?></span></div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <script id="swiper-template" type="text/x-magento-template">
+                                <div class="swiper-slide">
+                                    <span class="hidden">
+                                        <%- url %>
+                                    </span>
+                                </div>
+
+                        </script>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+            </div>
+        </div>
+    <?php endif ?>
+
+    <script>
+        require(['Eleadtech_ProductSlider/js/ProductSilder',"jquery"], function (slider,$) {
+            $("body").addClass("bslider");
+            slider.start(<?php echo $this->useTemplateToLoading() ?>);
+        });
+    </script>
+<?php endif ?>

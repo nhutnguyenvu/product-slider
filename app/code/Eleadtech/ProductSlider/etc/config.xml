@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <productslider>
+            <general>
+                <enabled>0</enabled>
+                <screen_formula>768-1200||1240-1220</screen_formula>
+                <show_description>1</show_description>
+            </general>
+            <developer>
+                <use_template_to_loading>1</use_template_to_loading>
+            </developer>
+        </productslider>
+
+    </default>
+</config>
