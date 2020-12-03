@@ -1,1 +1,1 @@
-# product-slider
+# Product Slider
